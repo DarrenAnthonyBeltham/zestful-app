@@ -1,0 +1,295 @@
+/* Zestful Theme: Sage/Matcha - Elite Design System */
+
+:root {
+  /* Color Palette */
+  --matcha-dark: #2d4a3e;
+  --matcha-medium: #588157;
+  --matcha-light: #a3b18a;
+  --matcha-pale: #dad7cd;
+  --matcha-bg: #fdfcf8;
+  --matcha-text: #343a40;
+  --matcha-accent: #bc4749;
+
+  /* Spacing & Radius */
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.5rem;
+
+  /* Typography */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+body {
+  background-color: var(--matcha-bg);
+  color: var(--matcha-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .display-4, .display-3, .display-5 {
+  color: var(--matcha-dark);
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--matcha-medium);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--matcha-dark);
+}
+
+/* --- Buttons --- */
+.btn {
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--matcha-medium);
+  border-color: var(--matcha-medium);
+  box-shadow: 0 4px 10px rgba(88, 129, 87, 0.3);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--matcha-dark);
+  border-color: var(--matcha-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(88, 129, 87, 0.4);
+}
+
+/* --- Cards --- */
+.card {
+  border: none;
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.hover-card:hover {
+    transform: translateY(-3px);
+}
+
+/* --- Forms --- */
+.form-control,
+.form-select {
+  border-radius: var(--bs-border-radius);
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #ffffff;
+  border-color: var(--matcha-medium);
+  box-shadow: 0 0 0 4px rgba(88, 129, 87, 0.1);
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+/* Force vertically center the user icon, text, and dropdown arrow */
+.navbar-nav .dropdown-toggle {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar-nav .dropdown-toggle::after {
+  display: inline-block !important;
+  margin-left: 0.5em !important;
+  vertical-align: middle !important;
+  border-top: 0.3em solid !important;
+  border-right: 0.3em solid transparent !important;
+  border-bottom: 0 !important;
+  border-left: 0.3em solid transparent !important;
+}
+
+/* --- Custom Styled Dropdown Component --- */
+.styled-dropdown-toggle {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--bs-border-radius);
+  color: var(--matcha-text);
+  text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem; /* Increased padding for height */
+  font-size: 0.95rem;
+  min-height: 50px; /* Match typical input height */
+}
+
+.styled-dropdown-toggle:hover,
+.styled-dropdown-toggle:focus {
+  border-color: var(--matcha-medium) !important;
+  background-color: #fff !important;
+  box-shadow: 0 0 0 4px rgba(88, 129, 87, 0.1) !important;
+}
+
+.styled-dropdown-menu {
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: var(--bs-border-radius);
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.styled-dropdown-item {
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.styled-dropdown-item:hover {
+  background-color: #f0fdf4;
+  color: var(--matcha-dark);
+}
+
+.styled-dropdown-item.active {
+  background-color: var(--matcha-medium);
+  color: white;
+}
+
+/* --- Glassmorphism Utilities --- */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.admin-card-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbf8 100%);
+  border: 1px solid rgba(88, 129, 87, 0.1);
+}
+
+/* --- Responsive Meal Planner Grid --- */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 992px) {
+  .calendar-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 days per row on tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  .calendar-grid {
+    grid-template-columns: 1fr; /* 1 day per row on mobile */
+  }
+}
+
+.meal-slot {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  min-height: 130px;
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+
+.meal-slot.dragging-over {
+  background: #f0fdf4;
+  border: 1px dashed var(--matcha-medium);
+  transform: scale(1.02);
+}
+
+.meal-label {
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #a0aec0;
+}
+
+.recipe-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2d3748;
+  line-height: 1.2;
+}
+
+.empty-slot-icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e0;
+  font-size: 1.5rem;
+  min-height: 80px;
+}
+
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- Print View Styles --- */
+@media print {
+  .navbar, .btn, .ai-chatbot, .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+  }
+  
+  a[href]::after {
+    content: none !important;
+  }
+}
